@@ -106,10 +106,10 @@ class sale_order(osv.osv):
                     })
                     
                     if is_bundle:
-                        print "Total quantity of product: " + str(fake_line.qty_uom*line.product_qty_uom)
+                        print "Total quantity of product: " + str(fake_line.qty_uom*line.product_uom_qty)
                         line_vals.update({
                             'product_id': fake_line.item_id.id,
-                            'product_qty': fake_line.qty_uom*line.product_qty_uom,
+                            'product_qty': fake_line.qty_uom*line.product_uom_qty,
                             'product_uom': fake_line.uom_id.id,
                             'product_uos_qty': fake_line.qty_uom,
                             'product_uos': fake_line.uom_id.id,
